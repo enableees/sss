@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_tasks"
+        android:icon="@drawable/baseline_task_24"
+        android:title="Задачи" />
+    <item
+        android:id="@+id/nav_blocked"
+        android:icon="@drawable/baseline_screen_lock_portrait_24"
+        android:title="Блокировки" />
+    <item
+        android:id="@+id/nav_stats"
+        android:icon="@drawable/baseline_query_stats_24"
+        android:title="Статистика" />
+</menu>
