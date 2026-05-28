@@ -65,7 +65,6 @@ public class SimpleChartView extends View {
         }
 
         float completedWidth = (float) completed / total * width;
-        float remainingWidth = width - completedWidth;
 
         canvas.drawRect(0, 0, completedWidth, height, completedPaint);
         canvas.drawRect(completedWidth, 0, width, height, remainingPaint);

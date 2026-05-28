@@ -42,10 +42,6 @@ public class BlockedAdapter extends RecyclerView.Adapter<BlockedAdapter.BlockedV
         notifyDataSetChanged();
     }
 
-    public BlockedItem getItemAt(int position) {
-        return items.get(position);
-    }
-
     public void clearSelection() {
         int old = selectedPosition;
         selectedPosition = RecyclerView.NO_POSITION;

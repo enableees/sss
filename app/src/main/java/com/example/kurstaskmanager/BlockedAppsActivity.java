@@ -23,8 +23,6 @@ import com.example.kurstaskmanager.data.BlockedItem;
 import com.example.kurstaskmanager.data.BlockedItemDao;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-import java.util.List;
-
 public class BlockedAppsActivity extends AppCompatActivity {
 
     private BlockedItem selectedBlockedItem = null;

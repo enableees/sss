@@ -70,10 +70,6 @@ public class TaskAdapter extends RecyclerView.Adapter<TaskAdapter.TaskViewHolder
         return tasks.size();
     }
 
-    public Task getTaskAt(int position) {
-        return tasks.get(position);
-    }
-
     class TaskViewHolder extends RecyclerView.ViewHolder {
         private TextView tvName, tvDeadline, tvPriority, tvStatus;
 

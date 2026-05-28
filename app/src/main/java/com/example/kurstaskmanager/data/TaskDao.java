@@ -18,12 +18,6 @@ public interface TaskDao {
     void deleteTask(long taskId);
     @Query("SELECT * FROM task_table ORDER BY createdAt DESC")
     LiveData<List<Task>> getAllTasks();
-    @Query("SELECT * FROM task_table WHERE id = :id")
-    LiveData<Task> getTaskById(long id);
-    @Query("SELECT COUNT(*) FROM task_table WHERE status = 1 AND createdAt BETWEEN :start AND :end")
-    LiveData<Integer> getCompletedCount(long start, long end);
-    @Query("SELECT COUNT(*) FROM task_table WHERE createdAt BETWEEN :start AND :end")
-    LiveData<Integer> getTotalCount(long start, long end);
     @Query("SELECT * FROM task_table")
     List<Task> getAllTasksSync();
 }
