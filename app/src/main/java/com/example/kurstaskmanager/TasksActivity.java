@@ -364,6 +364,8 @@ public class TasksActivity extends AppCompatActivity {
         String status = statuses[task.getStatus()];
         String punishment = task.getPunishmentText() != null && !task.getPunishmentText().isEmpty() ?
                 task.getPunishmentText() : "Не указано";
+        String reward = task.getRewardText() != null && !task.getRewardText().isEmpty() ?
+                task.getRewardText() : "Не получена";
 
         StringBuilder blockedStr = new StringBuilder();
         List<Long> blockedIds = task.getBlockedIds();
@@ -386,6 +388,7 @@ public class TasksActivity extends AppCompatActivity {
                 "Приоритет: " + priority + "\n" +
                 "Статус: " + status + "\n" +
                 "Наказание: " + punishment + "\n" +
+                "Награда: " + reward + "\n" +
                 "Блокируемые: " + blockedStr.toString();
 
         builder.setMessage(message);
@@ -401,7 +404,6 @@ public class TasksActivity extends AppCompatActivity {
                 .setTitle("Изменить статус")
                 .setItems(statuses, (dialog, which) -> {
                     task.setStatus(which);
-                    taskDao.updateTask(task);
 
                     List<Long> blockedIds = task.getBlockedIds();
                     if (blockedIds != null) {
@@ -409,6 +411,27 @@ public class TasksActivity extends AppCompatActivity {
                         for (long id : blockedIds) {
                             blockedItemDao.setActive(id, activate);
                         }
+                    }
+
+                    String message = null;
+                    if (which == 1) {
+                        String reward = "Молодец! Задача выполнена!";
+                        task.setRewardText(reward);
+                        message = reward;
+                    } else if (which == 2) {
+                        String punishment = task.getPunishmentText();
+                        message = (punishment != null && !punishment.isEmpty()) ?
+                                "Наказание: " + punishment : "Задача провалена";
+                    }
+
+                    taskDao.updateTask(task);
+
+                    if (message != null) {
+                        new AlertDialog.Builder(TasksActivity.this)
+                                .setTitle(which == 1 ? "Поощрение" : "Наказание")
+                                .setMessage(message)
+                                .setPositiveButton("OK", null)
+                                .show();
                     }
 
                     Toast.makeText(TasksActivity.this, "Статус обновлён", Toast.LENGTH_SHORT).show();
