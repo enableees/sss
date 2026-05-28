@@ -20,11 +20,11 @@ public class Task {
     private int status;
     private long createdAt;
     @TypeConverters(Converters.class)
-    private List<Integer> blockedIds;
+    private List<Long> blockedIds;
 
     public Task(String name, Long deadline, int priority, String description,
                 String rewardText, String punishmentText, int status, long createdAt,
-                List<Integer> blockedIds) {
+                List<Long> blockedIds) {
         this.name = name;
         this.deadline = deadline;
         this.priority = priority;
@@ -54,6 +54,6 @@ public class Task {
     public void setStatus(int status) { this.status = status; }
     public long getCreatedAt() { return createdAt; }
     public void setCreatedAt(long createdAt) { this.createdAt = createdAt; }
-    public List<Integer> getBlockedIds() { return blockedIds; }
-    public void setBlockedIds(List<Integer> blockedIds) { this.blockedIds = blockedIds; }
+    public List<Long> getBlockedIds() { return blockedIds; }
+    public void setBlockedIds(List<Long> blockedIds) { this.blockedIds = blockedIds; }
 }

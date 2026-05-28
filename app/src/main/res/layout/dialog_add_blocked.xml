@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/editBlockedName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Название (YouTube, Telegram...)"
+        android:textColor="@color/black"
+        android:textColorHint="#999999"/>
+
+    <RadioGroup
+        android:id="@+id/radioType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="12dp">
+
+        <RadioButton
+            android:id="@+id/radioApp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Приложение"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioSite"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Сайт"/>
+    </RadioGroup>
+</LinearLayout>

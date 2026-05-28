@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">KursTaskManager</string>
+    <string-array name="priority_options">
+        <item>Низкий</item>
+        <item>Средний</item>
+        <item>Высокий</item>
+    </string-array>
+    <string-array name="filter_options">
+        <item>Без фильтра</item>
+        <item>Приоритет: Высокий</item>
+        <item>Приоритет: Средний</item>
+        <item>Приоритет: Низкий</item>
+        <item>Статус: В процессе</item>
+        <item>Статус: Выполнена</item>
+        <item>Статус: Не выполнена</item>
+        <item>Есть дедлайн</item>
+        <item>Без дедлайна</item>
+    </string-array>
+
+    <string-array name="sort_options">
+        <item>По умолчанию (новые)</item>
+        <item>По приоритету (высокий → низкий)</item>
+        <item>По сроку (ближайшие → поздние)</item>
+        <item>По названию (А-Я)</item>
+    </string-array>
 </resources>

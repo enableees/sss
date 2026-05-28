@@ -20,4 +20,7 @@ public interface BlockedItemDao {
 
     @Query("UPDATE blocked_item_table SET isActive = :active WHERE id = :id")
     void setActive(long id, boolean active);
+
+    @Query("SELECT * FROM blocked_item_table ORDER BY id ASC")
+    List<BlockedItem> getAllBlockedItemsSync();
 }

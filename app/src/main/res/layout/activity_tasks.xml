@@ -34,25 +34,25 @@
             <Spinner
                 android:id="@+id/spinnerFilter"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/back2"
                 android:backgroundTint="@color/gr"
-                android:padding="8dp"
                 android:popupBackground="@color/white"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                />
 
             <Spinner
                 android:id="@+id/spinnerSort"
                 android:layout_width="0dp"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
                 android:background="@drawable/back2"
                 android:backgroundTint="@color/gr"
-                android:padding="8dp"
                 android:popupBackground="@color/white"
-                android:textColor="@color/white" />
+                android:textColor="@color/black"
+                />
         </LinearLayout>
 
         <EditText
