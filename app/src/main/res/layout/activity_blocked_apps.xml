@@ -8,7 +8,6 @@
     android:background="@drawable/backgroundmain"
     tools:context=".BlockedAppsActivity">
 
-    <!-- Контент над нижней навигацией -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +15,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Заголовок -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,7 +25,6 @@
             android:layout_marginBottom="16dp"
             android:layout_gravity="center_horizontal" />
 
-        <!-- Список блокировок -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerBlocked"
             android:layout_width="match_parent"
@@ -37,7 +34,6 @@
             android:background="@drawable/back2"
             android:padding="4dp" />
 
-        <!-- Кнопки управления -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

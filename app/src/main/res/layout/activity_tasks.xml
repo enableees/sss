@@ -8,7 +8,6 @@
     android:background="@drawable/backgroundmain"
     tools:context=".BlockedAppsActivity">
 
-    <!-- Основной контент над нижней панелью -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -16,7 +15,6 @@
         android:orientation="vertical"
         android:padding="16dp">
 
-        <!-- Заголовок -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -27,7 +25,6 @@
             android:layout_marginBottom="16dp"
             android:layout_gravity="center_horizontal" />
 
-        <!-- Фильтр и сортировка в одну строку -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +55,6 @@
                 android:textColor="@color/white" />
         </LinearLayout>
 
-        <!-- Поиск -->
         <EditText
             android:id="@+id/editSearch"
             android:layout_width="match_parent"
@@ -71,7 +67,6 @@
             android:layout_marginBottom="8dp"
             android:inputType="text" />
 
-        <!-- Список задач -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerTasks"
             android:layout_width="match_parent"
