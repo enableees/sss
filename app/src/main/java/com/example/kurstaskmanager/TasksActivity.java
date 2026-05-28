@@ -90,6 +90,7 @@ public class TasksActivity extends AppCompatActivity {
         AppDatabase db = AppDatabase.getInstance(this);
         taskDao = db.taskDao();
         blockedItemDao = db.blockedItemDao();
+        checkOverdueTasks();
 
         loadBlockedItems();
 
@@ -181,6 +182,24 @@ public class TasksActivity extends AppCompatActivity {
         btnCreateTask.setOnClickListener(v -> showCreateTaskDialog());
     }
 
+    private void checkOverdueTasks() {
+        List<Task> all = taskDao.getAllTasksSync();
+        long now = System.currentTimeMillis();
+        for (Task t : all) {
+            if (t.getDeadline() != null && t.getDeadline() < now
+                    && t.getStatus() != 1 && t.getStatus() != 2) {
+                t.setStatus(2); // не выполнена
+                taskDao.updateTask(t);
+                // Деактивируем блокировки, если были
+                List<Long> blockedIds = t.getBlockedIds();
+                if (blockedIds != null) {
+                    for (long id : blockedIds) {
+                        blockedItemDao.setActive(id, false);
+                    }
+                }
+            }
+        }
+    }
     private void loadBlockedItems() {
         allBlockedItems = blockedItemDao.getAllBlockedItemsSync();
     }

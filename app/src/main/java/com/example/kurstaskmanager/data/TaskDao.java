@@ -24,4 +24,6 @@ public interface TaskDao {
     LiveData<Integer> getCompletedCount(long start, long end);
     @Query("SELECT COUNT(*) FROM task_table WHERE createdAt BETWEEN :start AND :end")
     LiveData<Integer> getTotalCount(long start, long end);
+    @Query("SELECT * FROM task_table")
+    List<Task> getAllTasksSync();
 }

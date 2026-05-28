@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/backgroundmain"
-    tools:context=".BlockedAppsActivity">
+    android:background="@drawable/backgroundmain">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -38,16 +36,6 @@
             />
 
         <TextView
-            android:id="@+id/tvProductivityLabel"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Продуктивность"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"
-            android:layout_gravity="center_horizontal" />
-
-        <TextView
             android:id="@+id/tvProductivityPercent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -58,24 +46,14 @@
             android:layout_marginBottom="24dp"
             android:layout_gravity="center_horizontal" />
 
-        <FrameLayout
-            android:id="@+id/chartContainer"
+        <com.example.kurstaskmanager.SimpleChartView
+            android:id="@+id/chartView"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:background="#22FFFFFF"
-            android:layout_marginBottom="16dp">
+            android:layout_marginBottom="16dp" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Диаграмма прогресса"
-                android:textColor="@color/white"
-                android:textSize="16sp"
-                android:layout_gravity="center" />
-        </FrameLayout>
     </LinearLayout>
-
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigation"
