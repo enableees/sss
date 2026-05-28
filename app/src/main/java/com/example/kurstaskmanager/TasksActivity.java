@@ -188,9 +188,8 @@ public class TasksActivity extends AppCompatActivity {
         for (Task t : all) {
             if (t.getDeadline() != null && t.getDeadline() < now
                     && t.getStatus() != 1 && t.getStatus() != 2) {
-                t.setStatus(2); // не выполнена
+                t.setStatus(2);
                 taskDao.updateTask(t);
-                // Деактивируем блокировки, если были
                 List<Long> blockedIds = t.getBlockedIds();
                 if (blockedIds != null) {
                     for (long id : blockedIds) {
@@ -270,6 +269,9 @@ public class TasksActivity extends AppCompatActivity {
 
                     long id = taskDao.insertTask(task);
                     if (id != -1) {
+                        if (deadline != null) {
+                            NotificationHelper.showInstantNotification(TasksActivity.this, name, deadlineStr);
+                        }
                         Toast.makeText(TasksActivity.this, "Задача создана", Toast.LENGTH_SHORT).show();
                     } else {
                         Toast.makeText(TasksActivity.this, "Ошибка сохранения", Toast.LENGTH_SHORT).show();
